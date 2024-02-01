@@ -37,7 +37,7 @@ def main():
     
     #seaborn으로 시각화 코드 아무거나 작성
     fig, ax = plt.subplots(ncols=2, figsize=(10, 6), sharex=True, sharey=True)
-    sns.scatterplot(data=m_tips, x = 'total_bill', y = 'tip', ax=ax[0])
+    sns.scatterplot(x = m_tips['total_bill'], y = m_tips['tip'], ax=ax[0])
     ax[0].set_title('Male')
     sns.scatterplot(data=f_tips, x = 'total_bill', y = 'tip', ax=ax[1])
     ax[1].set_title('Female')
@@ -46,7 +46,7 @@ def main():
     
     st.pyplot(fig)
     
-    # plotly로 시각화 작성
+    # plotly.express로 시각화 작성
     fig = make_subplots(rows = 1,
                         cols = 2,
                         subplot_titles=('Male', 'Female'),
